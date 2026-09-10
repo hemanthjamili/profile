@@ -1,5 +1,25 @@
 const revealItems = document.querySelectorAll('.reveal');
 
+const aziraProjectGrid = document.querySelector('.projects-section .project-group .project-grid');
+if (aziraProjectGrid) {
+  const projectOrder = [
+    'Demand-side platform',
+    'Device identity resolution',
+    'Semantic search platform',
+    'Campaign Measurement',
+    'Shared backend building blocks',
+    'Authentication & authorization'
+  ];
+  const aziraCards = [...aziraProjectGrid.querySelectorAll('.project-card')];
+  const sdkCard = aziraCards.find((card) => card.querySelector('h3')?.textContent.trim() === 'Shared backend building blocks');
+  if (sdkCard) sdkCard.querySelector('h3').textContent = 'Backend Components as SDKs';
+  aziraCards.sort((first, second) => {
+    const firstTitle = first.querySelector('h3')?.textContent.trim() === 'Backend Components as SDKs' ? 'Shared backend building blocks' : first.querySelector('h3')?.textContent.trim();
+    const secondTitle = second.querySelector('h3')?.textContent.trim() === 'Backend Components as SDKs' ? 'Shared backend building blocks' : second.querySelector('h3')?.textContent.trim();
+    return projectOrder.indexOf(firstTitle) - projectOrder.indexOf(secondTitle);
+  }).forEach((card) => aziraProjectGrid.appendChild(card));
+}
+
 const viewCounter = document.querySelector('.footer-counter img');
 if (viewCounter) {
   const counterUrl = new URL(viewCounter.src);

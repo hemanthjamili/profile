@@ -77,7 +77,7 @@ h2 { font-size: clamp(38px, 5vw, 68px); letter-spacing: -.07em; line-height: 1; 
 .experience-main li { margin-bottom: 5px; padding-left: 4px; }
 .experience-tag { color: var(--accent-dark); font-family: var(--mono); font-size: 10px; line-height: 1.5; padding-top: 5px; text-transform: uppercase; }
 .capabilities-section { background: var(--paper-deep); max-width: 1400px; }
-.capability-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.capability-grid { display: grid; grid-template-columns: repeat(5, 1fr); }
 .capability-card { border-left: 1px solid var(--line); min-height: 230px; padding: 0 26px; }
 .capability-card:last-child { border-right: 1px solid var(--line); }
 .card-number { color: var(--accent-dark); font-family: var(--mono); font-size: 10px; }

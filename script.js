@@ -1,5 +1,12 @@
 const revealItems = document.querySelectorAll('.reveal');
 
+const viewCounter = document.querySelector('.footer-counter img');
+if (viewCounter) {
+  const counterUrl = new URL(viewCounter.src);
+  counterUrl.searchParams.set('v', Date.now().toString());
+  viewCounter.src = counterUrl.toString();
+}
+
 const themeToggle = document.querySelector('.theme-toggle');
 const savedTheme = localStorage.getItem('portfolio-theme');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
